@@ -1,0 +1,40 @@
+Sender: LSF System <lsfadmin@cu38>
+Subject: Job 712147: <testRS5ly6> in cluster <platform> Done
+
+Job <testRS5ly6> was submitted from host <mu> by user <qr> in cluster <platform>.
+Job was executed on host(s) <64*cu38>, in queue <cpu38>, as user <qr> in cluster <platform>.
+</home/qr> was used as the home directory.
+</home/qr/test_rsrefinement_5ly6/5ly6_xtb-gfn1_refine> was used as the working directory.
+Started at Sat Mar  7 01:43:04 2020
+Results reported on Mon Mar  9 20:05:45 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J testRS5ly6
+#BSUB -q cpu38      # this queue just contain cu39.
+#BSUB -n 64
+#BSUB -o test
+
+nohup qr.refine 5ly6_box.ccp4  5ly6_box_complete.pdb  mode=refine  quantum.nproc=12 parallel.nproc=5  max_bond_rmsd=0.03  stpmax=0.2 gradient_only=true clustering=true use_convergence_test=true  opt_log=1 restraints=qm  engine_name=xtb quantum.method='--gfn 1 --gbsa h2o' > 5ly6_xtbgfn1_stpmax02_RSRClash.log 2>&1 &
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   5514009.00 sec.
+    Max Memory :                                 18247 MB
+    Average Memory :                             16079.44 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   14 MB
+    Max Processes :                              18
+    Max Threads :                                182
+
+The output (if any) follows:
+

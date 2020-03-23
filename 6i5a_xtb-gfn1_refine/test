@@ -1,0 +1,40 @@
+Sender: LSF System <lsfadmin@cu38>
+Subject: Job 715366: <testRS6i5a> in cluster <platform> Done
+
+Job <testRS6i5a> was submitted from host <mu> by user <qr> in cluster <platform>.
+Job was executed on host(s) <64*cu38>, in queue <cpu38>, as user <qr> in cluster <platform>.
+</home/qr> was used as the home directory.
+</home/qr/test_rsrefinement_6i5a/6i5a_xtb-gfn1_refine> was used as the working directory.
+Started at Mon Mar  9 20:05:46 2020
+Results reported on Wed Mar 11 07:09:32 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J testRS6i5a
+#BSUB -q cpu38      # this queue just contain cu39.
+#BSUB -n 64
+#BSUB -o test
+
+nohup qr.refine 6i5a_box.ccp4  6i5a_box_complete.pdb  mode=refine  quantum.nproc=12 parallel.nproc=5  max_bond_rmsd=0.03  stpmax=0.2 gradient_only=true clustering=true use_convergence_test=true  opt_log=1 restraints=qm  engine_name=xtb quantum.method='--gfn 1 --gbsa h2o' > 6i5a_xtbgfn1_stpmax02_RSRClash.log 2>&1 &
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2885185.00 sec.
+    Max Memory :                                 15445 MB
+    Average Memory :                             13379.86 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   22 MB
+    Max Processes :                              17
+    Max Threads :                                182
+
+The output (if any) follows:
+

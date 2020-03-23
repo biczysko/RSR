@@ -1,0 +1,40 @@
+Sender: LSF System <lsfadmin@cu38>
+Subject: Job 709913: <testRS_3a5x> in cluster <platform> Done
+
+Job <testRS_3a5x> was submitted from host <mu> by user <qr> in cluster <platform>.
+Job was executed on host(s) <64*cu38>, in queue <cpu38>, as user <qr> in cluster <platform>.
+</home/qr> was used as the home directory.
+</home/qr/test_rsrefinement_3a5x/3a5x_xtb_refine/gfn1> was used as the working directory.
+Started at Tue Mar  3 00:01:17 2020
+Results reported on Sat Mar  7 01:43:04 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J testRS_3a5x
+#BSUB -q cpu38      # this queue just contain cu38.
+#BSUB -n 64
+#BSUB -o test
+
+nohup qr.refine EMD-1641.map  placed_model_complete.pdb  mode=refine  quantum.nproc=12 parallel.nproc=5  max_bond_rmsd=0.03  stpmax=0.2 gradient_only=true clustering=true use_convergence_test=true  opt_log=1 restraints=qm  engine_name=xtb quantum.method='--gfn 1 --gbsa h2o' > 3a5x_xtb-gfn1_stpmax02_RSRc6bd4b4.log 2>&1 &
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   7378576.00 sec.
+    Max Memory :                                 19044 MB
+    Average Memory :                             16610.67 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   20 MB
+    Max Processes :                              18
+    Max Threads :                                155
+
+The output (if any) follows:
+
